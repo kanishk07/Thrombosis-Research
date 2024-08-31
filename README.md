@@ -43,3 +43,4 @@ We consider the thrombin generation parameters as well as blood flow velocity (p
 
 
 
+
