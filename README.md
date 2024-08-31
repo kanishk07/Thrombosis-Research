@@ -1,6 +1,8 @@
 # Thrombosis-Research (Repo. under contruction)
 
-The repository briefly describes the publication I co-authored under Dr. Anass Bouchnita at University of Texas at El Paso where we utilised Deep learning and Machine Learning oriented thrombosis classification research.
+The repository briefly describes the publication I co-authored under Dr. Anass Bouchnita at University of Texas at El Paso where we utilised Deep learning and Machine Learning oriented thrombosis classification research. 
+
+My main contribution towards the research involved running machine learning and deep learning algorithms for the purpose of testing the accuracy of the data we had. My work involved performing binary classification to classify the patients into ones who have clotting and the others that do not have clotting based on the feature ‘clot size’ in our dataset, which was computationally generated.
 
 ## Introduction
 A blood clot forms in blood veins as a result of the complex process of blood coagulation, which involves biochemical reactions, blood flow, and injured wall. 
@@ -24,55 +26,9 @@ In the CFD model, we describe blood flow as Newtonian incompressible flow using 
 
 <img src="https://github.com/user-attachments/assets/08167575-8d5a-4cd2-a2d0-c0d8cef3b09d" alt="Image Description" width="700" height="100"/>
 
-    import numpy as np
-    import scipy.sparse as sp
-    import scipy.sparse.linalg as spla
-
-    Parameters
-    rho = 1.0   # density
-    mu = 1.0    # viscosity
-    K_f = 1.0   # constant related to the porous medium
-    Nx, Ny = 50, 50  # Grid points
-    Lx, Ly = 1.0, 1.0  # Domain size
-    dx, dy = Lx / Nx, Ly / Ny
-    dt = 0.01  # Time step
-    u = np.zeros((Nx, Ny, 2))  # Velocity field, u[..., 0] is u_x, u[..., 1] is u_y
-    p = np.zeros((Nx, Ny))  # Pressure field
-
-    Time-stepping loop
-    for t in range(100):
-        Compute the intermediate velocity
-        u_star = u.copy()
-    
-    # u_star = u - dt * (non-linear term + pressure gradient)
-    for i in range(1, Nx-1):
-        for j in range(1, Ny-1):
-            convective_term_x = (u[i,j,0] * (u[i+1,j,0] - u[i-1,j,0]) / (2*dx) + 
-                                 u[i,j,1] * (u[i,j+1,0] - u[i,j-1,0]) / (2*dy))
-            convective_term_y = (u[i,j,0] * (u[i+1,j,1] - u[i-1,j,1]) / (2*dx) + 
-                                 u[i,j,1] * (u[i,j+1,1] - u[i,j-1,1]) / (2*dy))
-            
-            u_star[i,j,0] -= dt * (convective_term_x + (1/rho) * (p[i+1,j] - p[i-1,j]) / (2*dx))
-            u_star[i,j,1] -= dt * (convective_term_y + (1/rho) * (p[i,j+1] - p[i,j-1]) / (2*dy))
-
-    # Solve for pressure correction
-    div_u = (u_star[2:,1:-1,0] - u_star[:-2,1:-1,0]) / (2*dx) + (u_star[1:-1,2:,1] - u_star[1:-1,:-2,1]) / (2*dy)
-    p_correction = spla.spsolve(laplacian_matrix, div_u.flatten())
-    p_correction = p_correction.reshape((Nx-2, Ny-2))
-    
-    # Update the velocity field
-    u[1:-1,1:-1,0] = u_star[1:-1,1:-1,0] - dt * (p_correction[1:, :] - p_correction[:-1, :]) / (2*dx)
-    u[1:-1,1:-1,1] = u_star[1:-1,1:-1,1] - dt * (p_correction[:, 1:] - p_correction[:, :-1]) / (2*dy)
-
-    Visualization
-    import matplotlib.pyplot as plt
-    plt.quiver(u[:,:,0], u[:,:,1])
-    plt.show()
-
-
 Blood flow decelerates as it crosses the porous medium, whose porosity depends on the production of fibrin polymer. The production of the latter is described by solving the PDE system:
 
-<img src="https://github.com/user-attachments/assets/a2ba8d63-2a17-4551-affa-79d926f48aef" alt="Image Description" width="400" height="120"/>
+<img src="https://github.com/user-attachments/assets/a2ba8d63-2a17-4551-affa-79d926f48aef" alt="Image Description" width="400" height="120"/><br>
 <img src="https://github.com/user-attachments/assets/4c860290-085a-4f3d-8876-ffbbc9e10bb9" alt="Image Description" width="400" height="300"/>
 
 ### Deep Learning and Machine Learning for constucting Surogate Model
