@@ -33,7 +33,7 @@ Blood flow decelerates as it crosses the porous medium, whose porosity depends o
 <img src="https://github.com/user-attachments/assets/a2ba8d63-2a17-4551-affa-79d926f48aef" alt="Image Description" width="400" height="120"/><br>
 <img src="https://github.com/user-attachments/assets/4c860290-085a-4f3d-8876-ffbbc9e10bb9" alt="Image Description" width="400" height="300"/>
 
-### Deep Learning and Machine Learning for constucting Surogate Model (_my contribution_)
+### Deep Learning and Machine Learning for constucting Surogate Model (_As part of my involvement in the research_)
 
 We develop a surrogate model which consists of an artificial neural network (ANN) that predicts coagulation initiation based on the results of numerical simulations. 
 We ran 7675 simulations in total, using 30% to assess the neural network's performance and 70% to train the network.
@@ -46,7 +46,7 @@ We consider the thrombin generation parameters as well as blood flow velocity (p
 
 The aforementioned figure also shows the structure of the ANN. To avoid under- and over-fitting, we employed an architecture with three hidden layers and 500 X 250 X 100 nodes. 94% accuracy was attained after 200+ training sessions
 
-# Results (_my conribution_)
+# Results (_As part of my involvement in the research_)
 <img src="https://github.com/user-attachments/assets/e1b3731e-6ea0-4cbe-993e-d4a55103e160" alt="Image Description" width="400" height="350"/>
 <img src="https://github.com/user-attachments/assets/a2406a37-ae53-4524-b099-b1d37aa990b0" alt="Image Description" width="400" height="350"/>
 Figure 2 <br>
@@ -54,9 +54,15 @@ Figure 2 <br>
 We trained the neural network for 200 periods and evaluated its performance by
 computing metrics such as the multi-cross entropy in log scale and the confusion matrix
 (Figure 2). Further, accuracy was evaluated at 94% on the test dataset. The performances
-of other NN architectures and classification algorithms are provided in Appendix A.2. To
-implement these algorithms, we used the Python libraries Scikit-learn and tensorflow. 
+of other NN architectures and classification algorithms. To implement these algorithms, we used the Python libraries Scikit-learn and tensorflow. 
 
+<br>
 
+<img src="https://github.com/user-attachments/assets/e47a4a95-0d0c-4ae0-8fd4-5b79b1f5d8a7" alt="Image Description" width="450" height="450"/>
 
+<br>
+
+![image](https://github.com/user-attachments/assets/2437ab81-080f-4658-9227-142462d8ffed) We compared the accuracy levels attained by different classification algorithms when used on the same dataset for the initiation of coagulation.
+We applied different DL algorithms and found that all DNN’s exceeded 90% accuracy. SVM performed better with GridSearch use. Decision tree at depth level – ‘3’ gave 90% accuracy. 
+Gradient boosting algorithms did better then most with accuracies surpassing 95%.
 
