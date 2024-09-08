@@ -1,4 +1,4 @@
-# Thrombosis-Research (Repo. under contruction)
+# Thrombosis-Research
 
 Publication Link: https://doi.org/10.3390/axioms12090873
 
@@ -60,9 +60,8 @@ of other NN architectures and classification algorithms. To implement these algo
 
 <img src="https://github.com/user-attachments/assets/e47a4a95-0d0c-4ae0-8fd4-5b79b1f5d8a7" alt="Image Description" width="450" height="450"/>
 
-<br>
-
-![image](https://github.com/user-attachments/assets/2437ab81-080f-4658-9227-142462d8ffed) We compared the accuracy levels attained by different classification algorithms when used on the same dataset for the initiation of coagulation.
+We compared the accuracy levels attained by different classification algorithms when used on the same dataset for the initiation of coagulation.
 We applied different DL algorithms and found that all DNN’s exceeded 90% accuracy. SVM performed better with GridSearch use. Decision tree at depth level – ‘3’ gave 90% accuracy. 
 Gradient boosting algorithms did better then most with accuracies surpassing 95%.
+
 
